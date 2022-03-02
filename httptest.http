@@ -2,7 +2,7 @@ POST http://localhost:3000/signup
 Content-Type: application/json
 
 {
-    "email":"devbapidey@gmail.com"
+    "email":"someemail@gmail.com"
 }
 
 ###
@@ -10,6 +10,6 @@ POST http://localhost:3000/profile
 Content-Type: application/json
 
 {
-    "email":"devbapidey@gmail.com",
+    "email":"someemail@gmail.com",
     "name":"A Student"
 }
