@@ -11,4 +11,4 @@ export class UserStudent extends User {
   profile: StudentDocument;
 }
 
-export const UserStudentSchema = SchemaFactory.createForClass(User);
+export const UserStudentSchema = SchemaFactory.createForClass(UserStudent);
