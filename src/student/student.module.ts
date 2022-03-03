@@ -6,16 +6,13 @@ import { UserStudentSchema } from './user-student.schema';
 
 @Module({
   imports: [
-    MongooseModule.forFeature(
-      [
-        {
-          name: 'users',
-          schema: UserSchema,
-          discriminators: [{ name: 'userStudent', schema: UserStudentSchema }],
-        },
-      ],
-      'MainDatabaseConnection',
-    ),
+    MongooseModule.forFeature([
+      {
+        name: 'users',
+        schema: UserSchema,
+        discriminators: [{ name: 'userStudent', schema: UserStudentSchema }],
+      },
+    ]),
   ],
   // providers: [{provide: getModelToken('userStudent'), useFactory: (userStudent)},]
   controllers: [StudentController],

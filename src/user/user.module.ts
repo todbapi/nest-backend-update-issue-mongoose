@@ -4,12 +4,7 @@ import { UserController } from './user.controller';
 import { UserSchema } from './user.schema';
 
 @Module({
-  imports: [
-    MongooseModule.forFeature(
-      [{ name: 'users', schema: UserSchema }],
-      'MainDatabaseConnection',
-    ),
-  ],
+  imports: [MongooseModule.forFeature([{ name: 'users', schema: UserSchema }])],
   controllers: [UserController],
 })
 export class UserModule {}
