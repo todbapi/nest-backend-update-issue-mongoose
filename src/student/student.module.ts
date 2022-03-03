@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { getModelToken, MongooseModule } from '@nestjs/mongoose';
+import { MongooseModule } from '@nestjs/mongoose';
 import { UserSchema } from 'src/user/user.schema';
 import { StudentController } from './student.controller';
 import { UserStudentSchema } from './user-student.schema';
@@ -14,7 +14,6 @@ import { UserStudentSchema } from './user-student.schema';
       },
     ]),
   ],
-  // providers: [{provide: getModelToken('userStudent'), useFactory: (userStudent)},]
   controllers: [StudentController],
 })
 export class StudentModule {}
