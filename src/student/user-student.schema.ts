@@ -11,6 +11,7 @@ export class UserStudent {
   // @Prop({ type: StudentSchema })
   // profile: Student;
 
+  // this is temporarily added to check it works or not
   @Prop()
   profile: string;
 }
