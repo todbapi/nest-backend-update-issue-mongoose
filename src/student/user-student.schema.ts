@@ -6,9 +6,13 @@ import { Student, StudentSchema } from './student.schema';
 export type UserStudentDocument = UserStudent & Document;
 
 @Schema()
-export class UserStudent extends User {
-  @Prop({ type: StudentSchema })
-  profile: Student;
+export class UserStudent {
+  email: string;
+  // @Prop({ type: StudentSchema })
+  // profile: Student;
+
+  @Prop()
+  profile: string;
 }
 
 export const UserStudentSchema = SchemaFactory.createForClass(UserStudent);
