@@ -4,7 +4,6 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
-import { StudentController } from './student/student.controller';
 import { StudentModule } from './student/student.module';
 
 @Module({
@@ -12,10 +11,9 @@ import { StudentModule } from './student/student.module';
     ConfigModule.forRoot({
       envFilePath: ['.env'],
     }),
-    MongooseModule.forRoot(
-      `mongodb://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@${process.env.DATABASE_HOST}:${process.env.DATABASE_PORT}/${process.env.DATABASE_DB}`,
-      { connectionName: 'MainDatabaseConnection' },
-    ),
+    MongooseModule.forRoot(`mongodb://localhost:27017/testdb`, {
+      connectionName: 'MainDatabaseConnection',
+    }),
     UserModule,
     StudentModule,
   ],

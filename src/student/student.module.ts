@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { getModelToken, MongooseModule } from '@nestjs/mongoose';
+import { MongooseModule } from '@nestjs/mongoose';
 import { UserSchema } from 'src/user/user.schema';
 import { StudentController } from './student.controller';
-import { UserStudentSchema } from './user-student.schema';
+import { UserStudentSchema, UserStudent } from './user-student.schema';
 
 @Module({
   imports: [
@@ -11,7 +11,9 @@ import { UserStudentSchema } from './user-student.schema';
         {
           name: 'users',
           schema: UserSchema,
-          discriminators: [{ name: 'userStudent', schema: UserStudentSchema }],
+          discriminators: [
+            { name: UserStudent.name, schema: UserStudentSchema },
+          ],
         },
       ],
       'MainDatabaseConnection',

@@ -5,6 +5,8 @@ export type StudentDocument = Student & Document;
 
 @Schema()
 export class Student {
+  docType: string;
+
   @Prop()
   name: string;
 }
